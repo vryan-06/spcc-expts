@@ -1,0 +1,17 @@
+Macro ** **
+INTP ** **
+CR 5,3 **
+TR 4,2 **
+MEND ** **
+PG1 START 0
+** USING *,15
+** L 1, FIVE
+** INCR **
+** A 1, FOUR
+** ST 1, TEMP
+** INTC **
+FIVE DC H'5'
+FOUR DC H'4'
+** INTP **
+TEMP DS 1F
+** END

@@ -1,0 +1,20 @@
+%{
+#include <stdio.h>
+int chars = 0, word = 0, newLine = 0, space = 0;
+%}
+
+%%
+[a-zA-Z]{1} {chars++;}
+[a-zA-Z]{2,} {word++;}
+[ ] {space++;}
+[\n] {newLine++;}
+%%
+
+int yywrap(){ return 1;
+}
+
+int main()
+{
+printf("Enter String: "); yylex();
+printf("No of characters: %d\n", chars); printf("No of words: %d\n", word); printf("No of spaces: %d\n", space); printf("No of newlines: %d\n", newLine);
+}

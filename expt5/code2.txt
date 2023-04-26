@@ -1,0 +1,21 @@
+Program to count negative and positive fractions and integers.
+
+%{
+#include<stdio.h>
+int pos_float=0, neg_float=0, pos_int=0, neg_int=0;
+%}
+
+%%
+[-][0-9]+ {neg_int++;}
+[+]?[0-9]+ {pos_int++;}
+[-][0-9]*\.[0-9]+ {neg_float++;}
+[+]?[0-9]*\.[0-9]+ {pos_float++;}
+%%
+
+int yywrap(){ return 1;
+}
+
+main() {
+printf("Enter the numbers: "); yylex();
+printf("No of positive fractions: %d\n", pos_float); printf("No of negative fractions: %d\n", neg_float); printf("No of positive integers: %d\n", pos_int); printf("No of negative integers: %d\n", neg_int);
+}

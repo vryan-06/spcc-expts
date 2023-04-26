@@ -1,0 +1,25 @@
+%{
+#include<stdio.h>
+int chars=0, words=0, spaces=0, keywords=0, newline=0, digits=0, identifier=0, stringliterals=0;
+%}
+
+%%
+(int|float|void|char|string|double|return) {keywords++;} [a-zA-Z]{2,} {words++;}
+_[_a-zA-Z0-9]+ {identifier++;}
+\"[^\"]*\" {stringliterals++;} [0-9] {digits++;}
+[ ] {spaces++;}
+[\n] {newline++;}
+[a-zA-Z] {chars++;}
+%%
+
+int yywrap(){ return 1;
+}
+
+main() {
+printf("Enter the strings: "); yylex();
+printf("No of keywords: %d\n", keywords);
+
+printf("No of words: %d\n", words); printf("No of characters: %d\n", chars);
+printf("No of stringliterals: %d\n", stringliterals); printf("No of identifiers: %d\n", identifier); printf("No of digits: %d\n", digits);
+printf("No of spaces: %d\n", spaces); printf("No of newline: %d\n", newline);
+}

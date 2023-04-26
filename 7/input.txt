@@ -1,0 +1,9 @@
+PG1 START
+USING *,15
+L 1,four
+A 1,five
+ST 1,temp
+four DC F'4'
+five DC F'5'
+temp DS 1F
+END
