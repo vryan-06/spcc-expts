@@ -77,7 +77,7 @@ def parseLine(line):
     print()
 
 
-code = open("code.txt").readlines()
+code = open("./code.txt").readlines()
 
 for line in code[:]:
     parseLine(line)

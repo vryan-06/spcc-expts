@@ -11,6 +11,35 @@
 #define SIZE 100
 int i = 0;
 
+void procE(char str[]);
+void procEdash(char str[]);
+void procT(char str[]);
+void procTdash(char str[]);
+void procF(char str[]);
+
+int main()
+{
+    printf("Enter the input: \n");
+    char str[SIZE];
+    fgets(str, SIZE, stdin);
+    // printf("%s", str);
+    int n = strlen(str);
+    procE(str);
+    // printf("value is %c", str[3]);
+    // printf("n is %d",n);
+    if ((n - 1) == i)
+    {
+        printf("Input is accepted\n");
+    }
+    else
+    {
+        printf("Input isn't accepted\n");
+        printf("ERROR");
+    }
+
+    return 0;
+}
+
 // T'->*FT'/eps
 void procTdash(char str[])
 {
@@ -72,29 +101,6 @@ void procE(char str[])
 {
     procT(str);
     procEdash(str);
-}
-
-int main()
-{
-    printf("Enter the input: \n");
-    char str[SIZE];
-    fgets(str, SIZE, stdin);
-    // printf("%s", str);
-    int n = strlen(str);
-    procE(str);
-    // printf("value is %c", str[3]);
-    // printf("n is %d",n);
-    if ((n - 1) == i)
-    {
-        printf("Input is accepted\n");
-    }
-    else
-    {
-        printf("Input isn't accepted\n");
-        printf("ERROR");
-    }
-
-    return 0;
 }
 
 // Test cases :

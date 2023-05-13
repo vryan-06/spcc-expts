@@ -2,8 +2,7 @@ package experiment_codes.expt1;
 
 import java.util.*;
 
-//SYMBOL TABLE
-class spcc_expt1 {
+class symbol_table {
     static List<List<String>> tokenTable = new ArrayList<List<String>>();
     public static void createTable(String s){
         String type ="";
@@ -100,13 +99,13 @@ class spcc_expt1 {
         Scanner sc = new Scanner(System.in);
         int exitFlag = 0;
         while(exitFlag!=1){
-            System.out.println("1. Create table 2. Search table 3. Enter symbol 4. Remove symbol 5. View table 6. Exit");
-            System.out.println("Enter your option");
+            System.out.println("\n1. Create table 2. Search table 3. Enter symbol 4. Remove symbol 5. View table 6. Exit\n");
+            System.out.println("Enter your option: ");
             int inp;
             inp = sc.nextInt();
             switch(inp){
                 case 1:
-                    System.out.println("Enter expression");
+                    System.out.println("Enter expression: ");
                     String s = sc.next();
                     createTable(s);
                     break;
@@ -118,7 +117,7 @@ class spcc_expt1 {
                     break;
 
                 case 3:
-                    System.out.println("Enter the symbol you want to remove: ");
+                    System.out.println("Enter the symbol you want to add: ");
                     String a = sc.next();
                     addSymbol(a);
                     break;
