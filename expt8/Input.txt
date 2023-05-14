@@ -1,17 +1,29 @@
-Macro ** **
-INTP ** **
-CR 5,3 **
-TR 4,2 **
-MEND ** **
-PG1 START 0
-** USING *,15
-** L 1, FIVE
+** MACRO **
 ** INCR **
-** A 1, FOUR
-** ST 1, TEMP
-** INTC **
-FIVE DC H'5'
-FOUR DC H'4'
-** INTP **
+** AR 2,3
+** SR 1,2
+** MEND **
+** MACRO **
+** DECR **
+** AX 8,9
+** ST 5,6
+** MEND **
+** MACRO **
+** CLRI **
+** AK 8,9
+** SK 5,6
+** MEND **
+PG1 Start 0
+** Using *,15
+** L 1,FIVE
+** A 1,FOUR
+** INCR **
+** ST 1,TEMP
+** INCR **
+FIVE DC F'5'
+FOUR DC F'4'
+TEMP DS 1F ** DECR **
+FOUR DC F'4'
+** CLRI **
 TEMP DS 1F
-** END
+** END **

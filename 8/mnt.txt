@@ -1,4 +1,0 @@
-INCR 1 
-DECR 4 
-CLRI 7 
-END **
