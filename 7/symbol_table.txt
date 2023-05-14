@@ -1,3 +1,0 @@
-four 16
-five 20
-temp 22
